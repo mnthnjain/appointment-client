@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+app-root {
+  width: 100vw;
+  display: block;
+  button {
+    background: none;
+    border: 2px blue solid;
+    height: 50px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  app-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  app-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  app-home {
+    text-align: center;
+  }
+  app-appointment {
+    .appointments {
+      padding: 10px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: baseline;
+
+      border-right: 2px blue solid;
+    }
+    .edit {
+      float: right;
+      margin: 0 auto;
+      button {
+        background: none;
+        border: 1px blue solid;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    display: flex;
+    align-items: center;
+
+    min-height: 100px;
+    width: 80%;
+    border: 2px blue solid;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+}

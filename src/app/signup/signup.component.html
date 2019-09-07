@@ -1,0 +1,23 @@
+<h1>Welcome To appointments</h1>
+<p>please sign up!</p>
+
+<form #userSignup="ngForm" (ngSubmit)="submit(userSignup.value)">
+    username:
+    <input ngModel name="username" required />
+    firstname:
+    <input ngModel name="username" required />
+    middlename:
+    <input ngModel name="middlename" required />
+<hr/>
+
+    <div>
+        lastname:
+        <input ngModel name="lastname" required />
+        email:
+        <input ngModel name="email" required />
+        password:
+        <input ngModel type="password" name="password" required />
+
+        <input type="submit" value="submit" />
+    </div>
+</form>

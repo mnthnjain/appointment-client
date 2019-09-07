@@ -1,0 +1,17 @@
+<!-- if user is not logged in show him option to login or registration page -->
+<div *ngIf="!userInfo">
+    <div>You are not logged in</div>
+    <button routerLink='/login'>Log in</button>
+    <button routerLink="/signup">Sign Up</button>
+</div>
+
+<!-- if user is logged in, take him to his home page -->
+<div *ngIf="userInfo">
+    <h1 class="appointments">Welcome {{userInfo.firstname}} </h1>
+    <H3>Here are your appointments</H3>
+    <button (click)="appointments.unshift({new: true})" class="button">Add Appointment</button>
+    <button (click)="logout()">Logout</button>
+    <app-appointment *ngFor="let appointment of appointments; let i=index" [data]="appointment"
+        (deleteAppointmentcb)="deleteAppointment($event)" [index]="i" [newAppointment]="appointment.new">
+    </app-appointment>
+</div>

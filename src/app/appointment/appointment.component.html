@@ -1,0 +1,43 @@
+<!-- read only mode -->
+<div class="appointments" *ngIf="!editing">
+    <div>Title: {{appointmentData.title}}</div>
+    <div>description: {{appointmentData.description}}</div>
+    <div>Time: {{appointmentData.time | date}}</div>
+    <div>location: {{appointmentData.location}}</div>
+    <div>
+        invited people:
+        <span> <span *ngFor="let person of appointmentData.invitedPersons">
+                {{person.email}}</span>
+        </span>
+    </div>
+</div>
+
+<!-- edit mode -->
+<div class="appointments" *ngIf="editing">
+    <div>Title: <input placeholder="Title" [(ngModel)]="appointmentData.title" />
+    </div>
+
+    <div>description: <input placeholder="description" [(ngModel)]="appointmentData.description" />
+    </div>
+    <div>Time: <input [placeholder]="appointmentData.time" type="datetime-local" defaultValue="2015-01-02T11:42:13.510"
+            [(ngModel)]="appointmentData.time" /></div>
+    <div>location:<input placeholder="location" [(ngModel)]="appointmentData.location" /></div>
+    <div>
+        <div>invited people:</div>
+        <div>
+            <ng-multiselect-dropdown [placeholder]="'invite people'" [data]="AllUsers"
+                [(ngModel)]="appointmentData.invitedPersons" [settings]="dropdownSettings" (onSelect)="add($event)">
+            </ng-multiselect-dropdown>
+        </div>
+    </div>
+</div>
+
+<!-- buttons to edit, save or remove appointments -->
+<div class="edit">
+    <button (click)="save()" [disabled]="editing && !(appointmentData.title && appointmentData.location)">
+        {{editing? 'save': 'edit'}}
+    </button>
+    <button (click)="delete()">
+        delete
+    </button>
+</div>
