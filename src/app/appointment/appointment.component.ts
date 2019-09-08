@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
 
 export class AppointmentComponent implements OnInit {
   // data for this particular appointment  
-  @Input('data') appointmentData: Object;
+  @Input('data') appointmentData: any;
   
   // function to remove this appointment
   @Output() deleteAppointmentcb: EventEmitter<Number> = new EventEmitter<Number>();;

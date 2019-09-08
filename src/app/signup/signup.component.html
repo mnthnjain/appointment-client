@@ -1,18 +1,18 @@
 <h1>Welcome To appointments</h1>
 <p>please sign up!</p>
 
-<form #userSignup="ngForm" (ngSubmit)="submit(userSignup.value)">
+<form #userSignup="ngForm" ngNativeValidate (ngSubmit)="submit(userSignup.value)">
     username:
     <input ngModel name="username" required />
     firstname:
-    <input ngModel name="username" required />
+    <input ngModel name="firstname" required />
     middlename:
-    <input ngModel name="middlename" required />
+    <input ngModel name="middlename"/>
 <hr/>
 
     <div>
         lastname:
-        <input ngModel name="lastname" required />
+        <input ngModel name="lastname"/>
         email:
         <input ngModel name="email" required />
         password:
