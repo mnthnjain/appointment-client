@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
     {
       this.userService.login(data.username, data.password).subscribe((response)=>{
         this.router.navigate(['/'])
+      },(err)=>{
+        window.alert('worng user name or password')
       })
     }
   }

@@ -7,7 +7,7 @@
 
 <!-- if user is logged in, take him to his home page -->
 <div *ngIf="userInfo">
-    <h1 class="appointments">Welcome {{userInfo.firstname}} </h1>
+    <h1 class="appointments">{{userInfo.firstname}} </h1>
     <H3>Here are your appointments</H3>
     <button (click)="appointments.unshift({new: true})" class="button">Add Appointment</button>
     <button (click)="logout()">Logout</button>

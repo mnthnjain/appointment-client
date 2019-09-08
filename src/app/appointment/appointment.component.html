@@ -19,7 +19,7 @@
 
     <div>description: <input placeholder="description" [(ngModel)]="appointmentData.description" />
     </div>
-    <div>Time: <input [placeholder]="appointmentData.time" type="datetime-local" defaultValue="2015-01-02T11:42:13.510"
+    <div>Time: <input [placeholder]="appointmentData.time" type="datetime-local" min="2001-01-01T00:00:00"
             [(ngModel)]="appointmentData.time" /></div>
     <div>location:<input placeholder="location" [(ngModel)]="appointmentData.location" /></div>
     <div>

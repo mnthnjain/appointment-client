@@ -17,6 +17,8 @@ export class SignupComponent implements OnInit {
     {
       this.userService.signup(data).subscribe((response)=>{
         this.router.navigate(['/'])
+      },(err)=>{
+        window.alert('username or email already taken')
       })
     }
   } 

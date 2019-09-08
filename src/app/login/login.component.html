@@ -1,7 +1,6 @@
-<h1>Welcome To appointments</h1>
 <p>please login!</p>
 <!-- login form -->
-<form #userlogin = "ngForm" (ngSubmit) = "submit(userlogin.value)">
+<form #userlogin = "ngForm" ngNativeValidate (ngSubmit) = "submit(userlogin.value)">
     username: 
     <input ngModel name="username" required/>
     password: 
